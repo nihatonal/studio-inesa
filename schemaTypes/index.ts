@@ -1,5 +1,12 @@
 import {blockContentType} from './blockContentType'
 import {blogCategoryType} from './blogCategoryType'
+import {blogDestinationType} from './blogDestinationType'
 import {blogType} from './blogType'
 import {recommendedType} from './recommendedType'
-export const schemaTypes = [blogCategoryType, blogType, blockContentType, recommendedType]
+export const schemaTypes = [
+  blogCategoryType,
+  blogDestinationType,
+  blogType,
+  blockContentType,
+  recommendedType,
+]
