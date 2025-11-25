@@ -19,6 +19,20 @@ export const blogType = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'lang',
+      title: 'Language',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'English', value: 'en'},
+          {title: 'Russian', value: 'ru'},
+          {title: 'Turkish', value: 'tr'},
+        ],
+        layout: 'radio', // istersen "dropdown" da olur
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'excerpt',
       title: 'Excerpt (SEO)',
       type: 'text',
@@ -123,7 +137,7 @@ export const blogType = defineType({
       views: 'views',
     },
     prepare(selection) {
-      const {title, media, category0,category1, destination, views} = selection
+      const {title, media, category0, category1, destination, views} = selection
 
       const categoryList = [category0, category1].filter(Boolean).join(', ') || 'No category'
 
